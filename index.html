@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansu Dimension</title>
+    <style>
+        /* CSS සාමාන්‍ය සැකසුම් / General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #ecf0f1;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #1f2833;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 255, 163, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #66fcf1;
+            text-shadow: 0 0 10px #66fcf1;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #c5a059;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #66fcf1;
+        }
+
+        /* Hero Section (මුල් පිටුව සහ Animation) */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/1080?neon') no-repeat center center/cover;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            color: #66fcf1;
+            margin-bottom: 10px;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #45f3ff;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        /* Shop Section (විකිණීමට ඇති භාණ්ඩ) */
+        .shop-container {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .shop-container h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #66fcf1;
+            border-bottom: 2px solid #66fcf1;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: #1f2833;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #45f3ff;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(102, 252, 241, 0.4);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #66fcf1;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            background-color: #66fcf1;
+            color: #0b0c10;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: #45f3ff;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2833;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #c5a059;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ANSU DIMENSION</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
+                <li><a href="https://tiktok.com" target="_blank">TikTok</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Ansu Dimension</h1>
+        <p>Explore AI Videos & Premium Merch</p>
+    </section>
+
+    <section class="shop-container" id="shop">
+        <h2>Our Store (අපේ නිෂ්පාදන)</h2>
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?clothing" alt="T-Shirt" class="product-image">
+                <div class="product-title">Ansu Dimension T-Shirt</div>
+                <div class="product-price">Rs. 2,500</div>
+                <button class="buy-btn" onclick="buyItem('T-Shirt')">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?jewelry" alt="Necklace" class="product-image">
+                <div class="product-title">AI Dimension Necklace</div>
+                <div class="product-price">Rs. 1,200</div>
+                <button class="buy-btn" onclick="buyItem('Necklace')">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/300/300?ring" alt="Ring" class="product-image">
+                <div class="product-title">Ansu Anime Ring</div>
+                <div class="product-price">Rs. 950</div>
+                <button class="buy-btn" onclick="buyItem('Ring')">Buy Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ansu Dimension. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function buyItem(itemName) {
+            alert("Thank you for choosing Ansu Dimension! You selected: " + itemName + "\n(මෙම ඇණවුම ඉදිරියේදී සක්‍රීය වනු ඇත.)");
+        }
+    </script>
+</body>
+</html>
