@@ -1,739 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ansu Dimensions | AI Video Creator & Merch Store</title>
-    <!-- Import Google Fonts & FontAwesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <title>Ansu Dimensions | Premium</title>
+    <!-- Importing a beautiful modern font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* CSS RESET & CUSTOM VARIABLES */
+        /* Color Palette & Variables */
         :root {
-            --bg-color: #050508;
-            --panel-color: #0d0d15;
-            --neon-blue: #00f0ff;
-            --neon-pink: #ff007f;
-            --text-white: #f5f5fa;
-            --text-gray: #8a8a9d;
-            --glow-blue: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.2);
-            --glow-pink: 0 0 10px rgba(255, 0, 127, 0.5), 0 0 20px rgba(255, 0, 127, 0.2);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --primary-glow: #00f0ff;
+            --secondary-glow: #8a2be2;
+            --bg-color: #050510;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
             background-color: var(--bg-color);
-            color: var(--text-white);
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 18px;
+            color: #ffffff;
+            /* Cosmic background gradients */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.2), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.2), transparent 25%);
+            background-attachment: fixed;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        /* SCROLLBAR CUSTOMIZATION */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-color);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--panel-color);
-            border: 2px solid var(--neon-blue);
-            border-radius: 4px;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(5, 5, 8, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-            padding: 20px 40px;
+        /* Animated Navigation Bar */
+        nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            background: rgba(5, 5, 16, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
             z-index: 1000;
-        }
-
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 24px;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: var(--glow-blue);
-            cursor: pointer;
+            border-bottom: 1px solid var(--glass-border);
         }
 
         nav a {
-            color: var(--text-white);
+            color: #fff;
             text-decoration: none;
             font-weight: 600;
-            margin-left: 30px;
-            font-size: 18px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--neon-blue);
-            transition: width 0.3s ease;
+            font-size: 0.9em;
+            transition: color 0.3s, text-shadow 0.3s;
         }
 
         nav a:hover {
-            color: var(--neon-blue);
-            text-shadow: var(--glow-blue);
+            color: var(--primary-glow);
+            text-shadow: 0 0 10px var(--primary-glow);
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* HERO SECTION */
+        /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            padding: 0 20px;
-            position: relative;
-            background: radial-gradient(circle at center, rgba(0, 240, 255, 0.08) 0%, rgba(5, 5, 8, 1) 70%);
-            border-bottom: 1px solid rgba(255, 0, 127, 0.1);
-        }
-
-        /* Abstract Glow Blobs in Background */
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: var(--neon-blue);
-            filter: blur(150px);
-            opacity: 0.15;
-            top: 20%;
-            left: 15%;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: var(--neon-pink);
-            filter: blur(150px);
-            opacity: 0.15;
-            bottom: 20%;
-            right: 15%;
-            pointer-events: none;
-        }
-
-        .hero-tag {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--neon-pink);
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: var(--glow-pink);
+            padding: 120px 20px 80px;
         }
 
         .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 72px;
-            font-weight: 900;
+            font-size: 4.5em;
+            margin: 0;
+            font-weight: 800;
             letter-spacing: 2px;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fff 40%, var(--neon-blue));
+            /* Gradient Text Effect */
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: pulse 3s infinite alternate;
         }
 
         .hero p {
-            font-size: 22px;
+            font-size: 1.2em;
+            color: #b0b0c0;
             max-width: 600px;
-            color: var(--text-gray);
-            margin-bottom: 40px;
+            margin: 20px auto;
             line-height: 1.6;
         }
 
-        .cta-btn {
-            background: transparent;
-            color: var(--neon-blue);
-            border: 2px solid var(--neon-blue);
-            padding: 15px 35px;
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: inset 0 0 0 0 rgba(0, 240, 255, 0.2);
-            transition: all 0.4s ease;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .cta-btn:hover {
-            background: var(--neon-blue);
-            color: #000;
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
-            text-shadow: none;
-        }
-
-        /* SECTION LAYOUTS */
-        section {
-            padding: 100px 40px 60px;
-            max-width: 1200px;
+        /* Glassmorphism Video Grid */
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
-        .section-header h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--neon-pink);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: var(--glow-pink);
-        }
-
-        .section-header p {
-            color: var(--text-gray);
-            margin-top: 15px;
-            font-size: 18px;
-        }
-
-        /* AI VIDEOS GRID */
-        .video-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .video-card {
-            background-color: var(--panel-color);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(138, 43, 226, 0.3);
+            border-color: var(--secondary-glow);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background: #111;
             border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .video-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--neon-blue);
-            box-shadow: var(--glow-blue);
-        }
-
-        .video-thumbnail {
-            position: relative;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.9em;
+            color: #666;
+            background-image: linear-gradient(45deg, #1a1a24, #0d0d14);
         }
 
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 13, 21, 0.7);
-            transition: background 0.3s ease;
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+            line-height: 1.4;
+            color: #e0e0ff;
         }
 
-        .video-card:hover .video-overlay {
-            background: rgba(13, 13, 21, 0.4);
-        }
-
-        .play-btn {
-            font-size: 48px;
-            color: var(--neon-blue);
-            z-index: 2;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .video-card:hover .play-btn {
-            transform: scale(1.2);
-            color: var(--neon-pink);
-        }
-
-        .platform-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid var(--neon-pink);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: var(--neon-pink);
-            z-index: 2;
-        }
-
-        .video-info {
-            padding: 25px;
-        }
-
-        .video-info h3 {
-            font-size: 22px;
-            font-family: 'Orbitron', sans-serif;
-            margin-bottom: 10px;
-        }
-
-        .video-info p {
-            color: var(--text-gray);
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        /* MERCH SHOP GRID */
-        .shop-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .product-card {
-            background-color: var(--panel-color);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--neon-pink);
-            box-shadow: var(--glow-pink);
-        }
-
-        .product-img-wrapper {
-            height: 320px;
-            overflow: hidden;
-            position: relative;
-            background-color: #12121e;
-        }
-
-        .product-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .product-card:hover .product-img-wrapper img {
-            transform: scale(1.1);
-        }
-
-        .product-info {
-            padding: 25px;
+        /* Social Buttons */
+        .social-container {
             text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to top, #000, transparent);
         }
 
-        .product-tag {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--neon-blue);
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .product-info h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .product-price {
-            font-size: 20px;
-            color: var(--neon-pink);
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .order-btn {
-            width: 100%;
-            background: linear-gradient(45deg, var(--neon-pink), #b0005d);
-            color: #fff;
-            border: none;
-            padding: 12px 0;
-            font-size: 16px;
-            font-weight: 700;
+        .social-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            margin: 10px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-radius: 8px;
-            cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            border: 2px solid transparent;
         }
 
-        .order-btn:hover {
-            box-shadow: var(--glow-pink);
-            transform: scale(1.02);
+        .youtube {
+            background: rgba(255, 0, 0, 0.1);
+            border-color: #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
         }
+        .youtube:hover { background: #ff0000; box-shadow: 0 0 25px #ff0000; transform: scale(1.05); }
 
-        /* ABOUT / VS CODE SECTION */
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            background: rgba(13, 13, 21, 0.5);
-            border: 1px solid rgba(0, 240, 255, 0.1);
-            padding: 40px;
-            border-radius: 16px;
+        .tiktok {
+            background: rgba(37, 244, 238, 0.1);
+            border-color: #25F4EE;
+            box-shadow: 0 0 15px rgba(37, 244, 238, 0.3);
         }
+        .tiktok:hover { background: #25F4EE; color: #000; box-shadow: 0 0 25px #25F4EE; transform: scale(1.05); }
 
-        .about-text {
-            flex: 1;
+        .facebook {
+            background: rgba(24, 119, 242, 0.1);
+            border-color: #1877F2;
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.3);
         }
+        .facebook:hover { background: #1877F2; box-shadow: 0 0 25px #1877F2; transform: scale(1.05); }
 
-        .about-text h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
-            color: var(--neon-blue);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: var(--text-gray);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .vscode-visual {
-            flex: 1;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-            overflow: hidden;
-            border: 1px solid #333;
-        }
-
-        .vscode-header {
-            background-color: #323233;
-            padding: 10px;
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .vscode-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .dot-red { background-color: #ff5f56; }
-        .dot-yellow { background-color: #ffbd2e; }
-        .dot-green { background-color: #27c93f; }
-
-        .vscode-title {
-            color: #9da5b4;
-            margin-left: 20px;
-            font-size: 12px;
-        }
-
-        .vscode-body {
-            padding: 20px;
-            color: #abb2bf;
-            line-height: 1.5;
-        }
-
-        .code-keyword { color: #c678dd; }
-        .code-string { color: #98c379; }
-        .code-var { color: #e06c75; }
-        .code-function { color: #61afef; }
-        .code-comment { color: #5c6370; font-style: italic; }
-
-        /* FOOTER */
-        footer {
-            background-color: #030305;
-            border-top: 1px solid rgba(0, 240, 255, 0.1);
-            padding: 50px 40px;
-            text-align: center;
-        }
-
-        .footer-socials {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--neon-blue);
-            font-size: 20px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            background-color: var(--neon-blue);
-            color: #000;
-            box-shadow: var(--glow-blue);
-            transform: translateY(-5px);
-        }
-
-        .footer-logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .footer-copy {
-            color: var(--text-gray);
-            font-size: 14px;
-        }
-
-        /* RESPONSIVENESS */
-        @media (max-width: 900px) {
-            .about-container {
-                flex-direction: column;
-            }
-            .hero h1 {
-                font-size: 48px;
-            }
-            header {
-                padding: 15px 20px;
-            }
-            nav a {
-                margin-left: 15px;
-                font-size: 15px;
-            }
+        /* Keyframe Animations */
+        @keyframes pulse {
+            0% { text-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+            100% { text-shadow: 0 0 40px rgba(138, 43, 226, 0.8); }
         }
     </style>
 </head>
 <body>
 
-    <!-- STICKY HEADER -->
-    <header>
-        <div class="logo">ANSU DIMENSIONS</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#videos">AI Videos</a>
-            <a href="#shop">Store</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#videos">Dimensions</a>
+        <a href="#connect">Connect</a>
+    </nav>
 
-    <!-- HERO SECTION -->
     <div class="hero" id="home">
-        <div class="hero-tag">Entering New Dimensions</div>
-        <h1>ANSU DIMENSIONS</h1>
-        <p>Creating futuristic AI animations and high-end tech-wear merchandise. Designed in VS Code, powered by pure imagination.</p>
-        <button class="cta-btn" onclick="scrollToShop()">Explore Store</button>
+        <h1>Ansu Dimensions</h1>
+        <p>මේ ලෝකයේ සහ විශ්වයේ තිබෙන සුවිශේෂීම, විශ්මිත සහ අභිරහස් දේවල් පිළිබඳව ගවේෂණය කරන්න.</p>
     </div>
 
-    <!-- AI VIDEOS SECTION -->
-    <section id="videos">
-        <div class="section-header">
-            <h2>AI Creations</h2>
-            <p>High-quality immersive AI videos curated for TikTok and YouTube.</p>
-        </div>
-        <div class="video-grid">
-            <!-- Video Card 1 -->
-            <div class="video-card">
-                <div class="video-thumbnail" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/3924824769309083368_0');">
-                    <div class="video-overlay"></div>
-                    <div class="platform-badge">TikTok</div>
-                    <div class="play-btn" onclick="openSocialLink('tiktok')"><i class="fa-solid fa-play"></i></div>
-                </div>
-                <div class="video-info">
-                    <h3>Futuristic Cyber Dream</h3>
-                    <p>A mesmerizing AI-generated animation depicting cyberpunk cityscapes with neon lighting.</p>
-                </div>
-            </div>
-            <!-- Video Card 2 -->
-            <div class="video-card">
-                <div class="video-thumbnail" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/3924824769309083368_1');">
-                    <div class="video-overlay"></div>
-                    <div class="platform-badge">YouTube</div>
-                    <div class="play-btn" onclick="openSocialLink('youtube')"><i class="fa-solid fa-play"></i></div>
-                </div>
-                <div class="video-info">
-                    <h3>Abstract AI Dimensions</h3>
-                    <p>Exploring complex fractal dimensions using advanced neural style transfer models.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SHOP SECTION -->
-    <section id="shop">
-        <div class="section-header">
-            <h2>Dimension Store</h2>
-            <p>Secure your exclusive Ansu Dimensions merchandise. Custom printed and designed.</p>
-        </div>
-        <div class="shop-grid">
-            <!-- Product 1: T-Shirt -->
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <!-- High quality streetwear tshirt mockup -->
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12213693526356049537_0" alt="Ansu Dimensions Cyber T-Shirt">
-                </div>
-                <div class="product-info">
-                    <span class="product-tag">CLOTHING</span>
-                    <h3>Official Ansu Cyber Tee</h3>
-                    <p class="product-price">LKR 1,800.00</p>
-                    <button class="order-btn" onclick="orderViaWhatsApp('Official Ansu Cyber Tee', 'LKR 1,800.00')">
-                        <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-                    </button>
-                </div>
-            </div>
-            <!-- Product 2: Ring & Necklace -->
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <!-- High quality ring/jewelry aesthetic -->
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/3924824769309083368_3" alt="Cyber Ring & Pendant">
-                </div>
-                <div class="product-info">
-                    <span class="product-tag">ACCESSORIES</span>
-                    <h3>Dimension Ring & Necklace Set</h3>
-                    <p class="product-price">LKR 950.00</p>
-                    <button class="order-btn" onclick="orderViaWhatsApp('Dimension Ring & Necklace Set', 'LKR 950.00')">
-                        <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION (VS Code Integration) -->
-    <section id="about">
-        <div class="section-header">
-            <h2>Creative Lab</h2>
-            <p>How we bring design, code, and AI technology together inside VS Code.</p>
-        </div>
-        <div class="about-container">
-            <div class="about-text">
-                <h3>Code Meets Creativity</h3>
-                <p>Ansu Dimensions is more than a brand—it is a creative ecosystem. Using Visual Studio Code, we construct modern interactive experiences to bridge the gap between artificial intelligence art and physical streetwear products.</p>
-                <p>By blending web programming (HTML/CSS) with video generation tools, we create a futuristic retail and content Hub.</p>
-            </div>
-            <div class="vscode-visual">
-                <div class="vscode-header">
-                    <div class="vscode-dot dot-red"></div>
-                    <div class="vscode-dot dot-yellow"></div>
-                    <div class="vscode-dot dot-green"></div>
-                    <div class="vscode-title">editor.js - Visual Studio Code</div>
-                </div>
-                <div class="vscode-body">
-                    <p><span class="code-comment">// Editing Ansu Dimensions Platform</span></p>
-                    <p><span class="code-keyword">const</span> <span class="code-var">brand</span> = <span class="code-string">"Ansu Dimensions"</span>;</p>
-                    <p><span class="code-keyword">const</span> <span class="code-var">tools</span> = [<span class="code-string">"AI Video"</span>, <span class="code-string">"T-shirts"</span>, <span class="code-string">"VS Code"</span>];</p>
-                    <br>
-                    <p><span class="code-keyword">function</span> <span class="code-function">renderVibe</span>() {</p>
-                    <p>&nbsp;&nbsp;<span class="code-var">console</span>.<span class="code-function">log</span>(<span class="code-string">`Launching ${brand}...`</span>);</p>
-                    <p>&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">"🚀 Futuristic Glow Active!"</span>;</p>
-                    <p>}</p>
-                    <br>
-                    <p><span class="code-function">renderVibe</span>();</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-socials">
-            <a href="https://tiktok.com" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-        <div class="footer-logo">ANSU DIMENSIONS</div>
-        <p class="footer-copy">© 2026 Ansu Dimensions. Created using Visual Studio Code.</p>
-    </footer>
-
-    <!-- INTERACTION SCRIPTS -->
-    <script>
-        // Smooth scroll to store section
-        function scrollToShop() {
-            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // WhatsApp direct ordering link generator
-        function orderViaWhatsApp(itemName, price) {
-            // Replace this number with your actual WhatsApp phone number (with country code, e.g., 94771234567 for Sri Lanka)
-            const myPhoneNumber = "94771234567"; 
+    <div class="container" id="videos">
+        <h2 class="section-title">Latest Explorations</h2>
+        <div class="grid">
             
-            const message = `Hello Ansu Dimensions! 🚀 I would like to order:\n\n🛍️ Product: *${itemName}*\n💰 Price: *${price}*\n\nPlease let me know the delivery details. Thank you!`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${myPhoneNumber}?text=${encodedMessage}`;
+            <div class="card">
+                <div class="card-img">Jurassic Era Thumbnail Placeholder</div>
+                <h3>ජුරාසික් යුගයේ ලෝකය | මිනිසුන්ට පෙර පෘථිවිය පාලනය කළ දැවැන්තයින්!</h3>
+            </div>
             
-            window.open(whatsappURL, '_blank');
-        }
+            <div class="card">
+                <div class="card-img">Motivation Thumbnail Placeholder</div>
+                <h3>ඉංග්‍රීසි බැරිද? ඒක ලැජ්ජාවක් නෙවෙයි! | Motivation to Learn English</h3>
+            </div>
+            
+            <div class="card">
+                <div class="card-img">AI Guide Thumbnail Placeholder</div>
+                <h3>Ultimate AI Guide 2026 | කියවන දේ අමතක වෙනවාද?</h3>
+            </div>
+            
+        </div>
+    </div>
 
-        // Redirect mock social interactions
-        function openSocialLink(platform) {
-            if (platform === 'tiktok') {
-                alert("This will direct to your TikTok Video Link! You can easily change this link in VS Code.");
-            } else if (platform === 'youtube') {
-                alert("This will direct to your YouTube Video Link! You can easily change this link in VS Code.");
-            }
-        }
-    </script>
+    <div class="social-container" id="connect">
+        <h2 style="margin-bottom: 40px; color: #fff;">Enter The Dimension</h2>
+        <a href="https://www.youtube.com/@AnsuDimensions2" target="_blank" class="social-btn youtube">YouTube</a>
+        <a href="#" class="social-btn tiktok">TikTok</a>
+        <a href="#" class="social-btn facebook">Facebook</a>
+    </div>
+
 </body>
 </html>
